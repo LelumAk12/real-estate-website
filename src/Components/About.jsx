@@ -1,9 +1,14 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { motion } from 'framer-motion'
 
 const About = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: 200 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
       className="flex flex-col items-center justify-center container mx-auto p-14 md:px-0 lg:px-32 w-full overflow-hidden"
       id="About"
     >
@@ -41,18 +46,20 @@ const About = () => {
               <p>Ongoing Projects</p>
             </div>
           </div>
-          <p className='my-10 max-w-lg'>
-            At Estate, we are committed to helping you find the
-            perfect place to call home. Whether you're buying, selling, or
-            renting, our experienced team offers trusted guidance, personalized
-            service, and deep knowledge of the real estate market. We believe
-            that every property tells a story, and we’re here to make your
-            journey smooth, stress-free, and rewarding.
+          <p className="my-10 max-w-lg">
+            At Estate, we are committed to helping you find the perfect place to
+            call home. Whether you're buying, selling, or renting, our
+            experienced team offers trusted guidance, personalized service, and
+            deep knowledge of the real estate market. We believe that every
+            property tells a story, and we’re here to make your journey smooth,
+            stress-free, and rewarding.
           </p>
-          <button className='bg-blue-600 text-white px-8 py-2 rounded'>Learn More</button>
+          <button className="bg-blue-600 text-white px-8 py-2 rounded">
+            Learn More
+          </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

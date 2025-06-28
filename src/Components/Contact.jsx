@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const Contact = () => {
     const [result, setResult] = React.useState("");
@@ -29,7 +30,11 @@ const Contact = () => {
       }
     };
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      transition={{ duration: 1.}}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
       className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden"
       id="Contact"
     >
@@ -42,7 +47,10 @@ const Contact = () => {
       <p className="text-center text-gray-500 mb-12 max-w-80 mx-auto">
         Ready to Make Move? Let's Build Your Future Together
       </p>
-      <form onSubmit={onSubmit} className="max-w-2xl mx-auto text-gray-600 py-8">
+      <form
+        onSubmit={onSubmit}
+        className="max-w-2xl mx-auto text-gray-600 py-8"
+      >
         <div className="flex flex-wrap">
           <div className="w-full md:w-1/2 text-left">
             Your Name
@@ -66,12 +74,19 @@ const Contact = () => {
           </div>
         </div>
         <div className="my-6 text-left">
-            Message
-          <textarea className="w-full border border-gray-300 rounded py-3 px-4 mt-2 h-48 resize-none" name="Message" placeholder="Message" required></textarea>
+          Message
+          <textarea
+            className="w-full border border-gray-300 rounded py-3 px-4 mt-2 h-48 resize-none"
+            name="Message"
+            placeholder="Message"
+            required
+          ></textarea>
         </div>
-        <button className="bg-blue-600 text-white py-2 px-12 mb-10 rounded">{result ? result :"Send Message"}</button>
+        <button className="bg-blue-600 text-white py-2 px-12 mb-10 rounded">
+          {result ? result : "Send Message"}
+        </button>
       </form>
-    </div>
+    </motion.div>
   );
 };
 
