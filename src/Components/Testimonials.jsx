@@ -8,12 +8,12 @@ const Testimonials = () => {
       id="Testimonials"
     >
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
-        Customer{" "}
+        Customer
         <span className="underline underline-offset-4 decoration-1 font-light">
           Testimonials
         </span>
       </h1>
-      <p className="text-center text-gray-500 mb-12 max-w-md mx-auto">
+      <p className="text-center text-gray-500 mb-12 max-w-80 mx-auto">
         Real Stories from Those Who Found Home With Us
       </p>
 
